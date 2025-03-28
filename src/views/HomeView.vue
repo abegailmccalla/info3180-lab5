@@ -16,4 +16,12 @@ let message = ref("Hello World! This is a VueJS and Flask Starter Template.")
 
 <style>
 /* Add any component specific styles here */
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 </style>
