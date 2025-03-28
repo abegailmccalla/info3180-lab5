@@ -9,7 +9,7 @@ from app import app, db
 from app.models import Movie  # Ensure the Movie model is correctly defined in app/models.py
 from app.forms import MovieForm
 from flask_wtf.csrf import generate_csrf
-from flask import render_template, jsonify, send_from_directory  # Ensure 'request' is imported correctly
+from flask import render_template, request, jsonify, send_file, send_from_directory  # Ensure 'request' is imported correctly
 from werkzeug.utils import secure_filename
 import os
 
@@ -38,7 +38,6 @@ def movies():
         new_movie = Movie(title=title, description=description, poster=filename, created_at=None)
         db.session.add(new_movie)
         db.session.commit()
-        
         
         return jsonify({
             "message":"Movie Succesfully Added",

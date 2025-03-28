@@ -1,7 +1,9 @@
+# Add any form classes for Flask-WTF here
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField
-from wtforms.validators import InputRequired
+from wtforms import StringField, TextAreaField, FileField
+from wtforms.validators import InputRequired, DataRequired, Length
 from flask_wtf.file import FileRequired, FileField, FileAllowed
+
 
 # Add any form classes for Flask-WTF here
 class MovieForm(FlaskForm):
