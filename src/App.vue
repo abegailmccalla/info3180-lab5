@@ -5,8 +5,7 @@ import AppFooter from "@/components/AppFooter.vue";
 import { ref, computed } from 'vue'
 
 /* - `isDarkmode`: A boolean prop that determines whether the application is in dark mode. */
-const isDarkmode = ref(true);
-
+const isDarkmode = ref(false);
 /**
  * Toggles the theme between dark mode and light mode.
  * 

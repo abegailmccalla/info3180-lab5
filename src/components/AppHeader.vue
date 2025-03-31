@@ -20,8 +20,8 @@
               <RouterLink to="/" class="nav-link" :class="{ active: $route.path === '/' }">Home</RouterLink>
             </li>
             <!--
-               * This is a navigation link component using Vue Router's `RouterLink`.
-               * - The `class` attribute applies the "nav-link" class for styling.
+               * This is a navigation link component using Vue Router's RouterLink.
+               * - The class attribute applies the "nav-link" class for styling.
           -->
             <li class="nav-item">
               <RouterLink class="nav-link" :class="{ active: $route.path === '/about' }" to="/about">About</RouterLink>
@@ -42,10 +42,10 @@
 <script setup>
 import { RouterLink } from "vue-router";
 /**
- * This file defines the `AppHeader` component.
+ * This file defines the AppHeader component.
  * 
  * Imports:
- * - `defineProps` from Vue: Used to define props for the component.
+ * - defineProps from Vue: Used to define props for the component.
  */
 import { defineProps } from 'vue';
 

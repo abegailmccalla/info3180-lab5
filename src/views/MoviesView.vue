@@ -156,25 +156,25 @@ onMounted(() => {
 
 
 .movie-light-theme {
-  background: #ece8e8;
+  background: white;
 }
 
 .movie-dark-theme {
-  background: #D1D8E0;
+  background: #a6c3e4;
 }
 
 .movie-light-theme:hover {
-  background: white ;
+  background: yellow;
   transform: scale(1.05);
-  box-shadow: 0px 0px 10px rgb(146, 144, 144) ;
-  border-color: #817e7e96 ;
+  box-shadow: 0px 0px 10px yellow;
+  border-color: purple;
 }
 
 .movie-dark-theme:hover {
   transform: scale(1.05); /* Slightly enlarges the card */
-  box-shadow: 0px 0px 10px #ffcc00; /* Increases shadow */
-  border-color: #817e7e96; /* Changes border color */
-  background: #ffcc00 ;
+  box-shadow: 0px 0px 10px purple; /* Increases shadow */
+  border-color: yellow; /* Changes border color */
+  background: purple ;
 }
 
 

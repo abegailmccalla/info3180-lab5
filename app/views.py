@@ -9,7 +9,7 @@ from app import app, db
 from app.models import Movie  # Ensure the Movie model is correctly defined in app/models.py
 from app.forms import MovieForm
 from flask_wtf.csrf import generate_csrf
-from flask import render_template, request, jsonify, send_file, send_from_directory  # Ensure 'request' is imported correctly
+from flask import render_template, jsonify, send_from_directory  # Ensure 'request' is imported correctly
 from werkzeug.utils import secure_filename
 import os
 
@@ -20,7 +20,7 @@ import os
 
 @app.route('/')
 def index():
-    return jsonify(message="This is the beginning of our API")
+    return jsonify(message="This is the beginning of our API"),200
 
 @app.route('/api/v1/movies', methods = ['POST'])
 def movies():
@@ -30,6 +30,7 @@ def movies():
         title = form.title.data
         description = form.description.data
         poster = form.poster.data
+        
     
         filename = secure_filename(poster.filename)
         poster_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
@@ -38,6 +39,7 @@ def movies():
         new_movie = Movie(title=title, description=description, poster=filename, created_at=None)
         db.session.add(new_movie)
         db.session.commit()
+        
         
         return jsonify({
             "message":"Movie Succesfully Added",
@@ -57,7 +59,7 @@ def get_csrf():
 
 @app.route("/api/v1/posters/<filename>")
 def get_posters(filename):
-    return send_from_directory(os.path.join(os.getcwd(), app.config['UPLOAD_FOLDER']), filename)
+    return send_from_directory(os.path.join(os.getcwd(), app.config['UPLOAD_FOLDER']), filename), 200
 
 
 @app.route("/api/v1/movies", methods=['GET'])
@@ -73,7 +75,7 @@ def add_movies():
             "poster": f"/api/v1/posters/{movie.poster}"
         })
 
-    return jsonify({"movies": movies_list})
+    return jsonify({"movies": movies_list}), 200
 
 
 ###

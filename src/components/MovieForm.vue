@@ -72,7 +72,7 @@ const saveMovie = () => {
                 errors.value = data.errors;
                 emit('flashMessage',errors);
             } else{
-                success_message.value = "Movie Successfully Added!!!";
+                success_message.value = "File Upload Successful";
                 /**
                  * Resets the form fields for the movie form component.
                  * - Clears the `title` and `description` input fields by setting their values to an empty string.
@@ -220,7 +220,7 @@ textarea, textarea:focus{
 textarea:hover:not(:focus) {
     border-color: #292a2c; /* Darker border on hover */
     box-shadow: 0 0 5px rgba(247, 245, 245, 0.788); /* Slight glow effect */
-    background-color: #fcfcfcab;
+    background-color: #f1ebeb65;
 }
 
 
@@ -240,7 +240,7 @@ input, input:focus {
 input:hover:not(:focus) {
     border-color: #292a2c; /* Darker border on hover */
     box-shadow: 0 0 5px rgba(247, 245, 245, 0.788); /* Slight glow effect */
-    background-color: #fcfcfcab;
+    background-color: #f1ebeb65;
 }
 
 
